@@ -6,7 +6,13 @@ import linkStrategy, { matchesEntityType } from './linkStrategy';
 import { defaultTheme } from './theme.js';
 
 export default (config = {}) => {
-  const { theme = defaultTheme, placeholder, Link, linkTarget } = config;
+  const {
+    theme = defaultTheme,
+    placeholder,
+    Link,
+    linkTarget,
+    LinkForm,
+  } = config;
 
   const store = {
     getEditorState: undefined,
@@ -20,6 +26,7 @@ export default (config = {}) => {
   const DecoratedLinkButton = props => (
     <LinkButton
       {...props}
+      linkForm={LinkForm}
       ownTheme={theme}
       store={store}
       placeholder={placeholder}

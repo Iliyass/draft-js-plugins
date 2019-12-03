@@ -10,6 +10,7 @@ export default class LinkButton extends Component {
     store: PropTypes.object.isRequired,
     ownTheme: PropTypes.object.isRequired,
     onRemoveLinkAtSelection: PropTypes.func.isRequired,
+    linkForm: PropTypes.element,
   };
 
   onMouseDown = event => {
@@ -19,9 +20,14 @@ export default class LinkButton extends Component {
   onAddLinkClick = e => {
     e.preventDefault();
     e.stopPropagation();
-    const { ownTheme, placeholder, onOverrideContent } = this.props;
+    const { ownTheme, placeholder, onOverrideContent, linkForm } = this.props;
+    const CustomAddLinkForm = linkForm || AddLinkForm;
     const content = props => (
-      <AddLinkForm {...props} placeholder={placeholder} theme={ownTheme} />
+      <CustomAddLinkForm
+        {...props}
+        placeholder={placeholder}
+        theme={ownTheme}
+      />
     );
     onOverrideContent(content);
   };

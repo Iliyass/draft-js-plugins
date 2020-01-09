@@ -1,6 +1,6 @@
 {
-  "name": "draft-js-anchor-plugin",
-  "version": "2.0.3",
+  "name": "@iliyass/draft-js-anchor-plugin",
+  "version": "2.0.9",
   "description": "Link Plugin for DraftJS",
   "author": {
     "name": "Jan Amann",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/draft-js-plugins/draft-js-plugins.git"
+    "url": "https://github.com/Iliyass/draft-js-plugins.git"
   },
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",

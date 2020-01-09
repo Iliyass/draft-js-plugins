@@ -1,7 +1,7 @@
 import React from 'react';
 import EditorUtils from 'draft-js-plugins-utils';
 import DefaultLink from './components/Link';
-import LinkButton from './components/LinkButton';
+import _DefaultLinkButton from './components/LinkButton';
 import linkStrategy, { matchesEntityType } from './linkStrategy';
 import { defaultTheme } from './theme.js';
 
@@ -12,6 +12,7 @@ export default (config = {}) => {
     Link,
     linkTarget,
     LinkForm,
+    LinkButton,
   } = config;
 
   const store = {
@@ -22,9 +23,9 @@ export default (config = {}) => {
   const DecoratedDefaultLink = props => (
     <DefaultLink {...props} className={theme.link} target={linkTarget} />
   );
-
+  const DefaultLinkButton = LinkButton || _DefaultLinkButton;
   const DecoratedLinkButton = props => (
-    <LinkButton
+    <DefaultLinkButton
       {...props}
       linkForm={LinkForm}
       ownTheme={theme}
